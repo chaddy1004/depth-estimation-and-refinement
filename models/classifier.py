@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.layers import Layer, Conv1D, Softmax
 
-from custom import Sine
+from utils.model_utils import Sine
 
 
 class Classifier(Layer):
