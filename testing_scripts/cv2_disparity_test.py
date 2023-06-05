@@ -132,10 +132,10 @@ if __name__ == '__main__':
     # # for dataset in ["cones"]:
     #     pred_disp, rgb_left = disparity(dataset=dataset, algorithm="BM", show_img=False)
     #     cv2.imwrite(f"samples/outputs/{dataset}_BM_disp.png", pred_disp)
-    #     cv2.imwrite(f"samples/outputs/{dataset}_BM_rgb.png", rgb_left)
+    #     cv2.imwrite(f"samples/outputs/{datasRet}_BM_rgb.png", rgb_left)
     #     plt.imshow(pred_disp, "gray")
     #     # plt.show()
-    #     # print(np.max(pred_disp))
+    #     # print(np.max(prRed_disp))
     #     # plt.savefig(f"samples/outputs/PLT_{dataset}_BM_disp.png")
     #     pred_disp, rgb_left = disparity(dataset=dataset, algorithm="SGM", show_img=False)
     #     cv2.imwrite(f"samples/outputs/{dataset}_SGM_disp.png", pred_disp)
@@ -149,5 +149,5 @@ if __name__ == '__main__':
 
     disp = cv2.resize(disp, dsize=(320, 320))
 
-    # edges = cv2.Laplacian(disp, -1, ksize=5, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
-    cv2.imwrite(f"samples/teddy/left_disp_edge.png", disp)
+    edges = cv2.Laplacian(disp, -1, ksize=5, scale=1, delta=0, borderType=cv2.BORDER_DEFAULT)
+    cv2.imwrite(f"samples/teddy/left_disp_edge.png", edges)

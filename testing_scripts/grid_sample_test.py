@@ -90,7 +90,7 @@ def main(height=10, width=20, num_samples=12, batch_size=1):
     print("n_subsets", np.ceil(n_pts / num_samples))
     with torch.no_grad():
         for i, coordinate_subset in enumerate(coordinate_subsets):
-            print("enumerate i", i)
+            print("gridsample enumerate i", i)
             points = np.transpose(a=coordinate_subset, axes=(0, 2, 1))  # swap dim1 and dim2
 
             # u is width, x
