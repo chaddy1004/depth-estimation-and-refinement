@@ -5,8 +5,7 @@ from keras.layers import Layer, Conv1D, Softmax, Activation
 from keras import Sequential
 from keras import initializers
 
-from utils.model_utils import Sine
-
+from utils.activation_utils import Sine
 
 
 class Regressor(Layer):
@@ -37,7 +36,7 @@ class Regressor(Layer):
 
     def call(self, input_feature, training=None):
         x = self.layer_1(input_feature)
-        x = self.layer_2(tf.concat([x, input_feature]))
-        x = self.layer_3(tf.concat([x, input_feature]))
+        x = self.layer_2(tf.concat([x, input_feature], axis=-1))
+        x = self.layer_3(tf.concat([x, input_feature], axis=-1))
         offsets = self.activation(x)
         return offsets
